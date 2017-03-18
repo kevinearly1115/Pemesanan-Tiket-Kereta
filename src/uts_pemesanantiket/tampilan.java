@@ -46,7 +46,6 @@ public class tampilan extends javax.swing.JFrame {
         id = new javax.swing.JTextField();
         stAwal = new javax.swing.JTextField();
         stTujuan = new javax.swing.JTextField();
-        Harga = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -73,6 +72,7 @@ public class tampilan extends javax.swing.JFrame {
         siang = new javax.swing.JRadioButton();
         sore = new javax.swing.JRadioButton();
         malam = new javax.swing.JRadioButton();
+        Harga = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,12 +93,6 @@ public class tampilan extends javax.swing.JFrame {
         stTujuan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 stTujuanActionPerformed(evt);
-            }
-        });
-
-        Harga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HargaActionPerformed(evt);
             }
         });
 
@@ -216,6 +210,13 @@ public class tampilan extends javax.swing.JFrame {
         buttonGroup2.add(malam);
         malam.setText("Malam");
 
+        Harga.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "60.000 (Eksekuitf)", "45.000 (Bisnis)", "40.000 (Ekonomi AC)", "12.000 (Ekonomi)" }));
+        Harga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HargaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -230,16 +231,16 @@ public class tampilan extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel9))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Harga, 0, 206, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(stTujuan)
                         .addComponent(stAwal)
                         .addComponent(id)
                         .addComponent(nama)
-                        .addComponent(Harga)
                         .addComponent(tmptDuduk, 0, 206, Short.MAX_VALUE)
                         .addComponent(tgl))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -258,7 +259,7 @@ public class tampilan extends javax.swing.JFrame {
                         .addComponent(sore)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(malam)))
-                .addGap(75, 75, 75)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -267,7 +268,7 @@ public class tampilan extends javax.swing.JFrame {
                     .addComponent(Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Pesan, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane1)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -333,9 +334,9 @@ public class tampilan extends javax.swing.JFrame {
                             .addComponent(tmptDuduk, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
-                            .addComponent(Harga, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Harga, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -349,7 +350,7 @@ public class tampilan extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1089, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -381,7 +382,7 @@ public class tampilan extends javax.swing.JFrame {
         buttonGroup1.clearSelection();
         buttonGroup2.clearSelection();
         tmptDuduk.setSelectedItem("");
-        Harga.setText("");
+        Harga.setSelectedItem("");
         
     }//GEN-LAST:event_ClearActionPerformed
 
@@ -389,7 +390,7 @@ public class tampilan extends javax.swing.JFrame {
     
          if ( nama.getText().equals("") || stAwal.getText().equals("") ||
                 stTujuan.getText().equals("") || tgl.getText().equals("")  ||
-                 tmptDuduk.getSelectedItem().equals("") || Harga.getText().equals("")){
+                 tmptDuduk.getSelectedItem().equals("") || Harga.getSelectedItem().equals("")){
             
             JOptionPane.showMessageDialog(this, "Harap Lengkapi Data", "Error",
                     JOptionPane.WARNING_MESSAGE);
@@ -424,7 +425,7 @@ public class tampilan extends javax.swing.JFrame {
              
             String SQL = "INSERT INTO tb_pesan VALUES (null, '"+nama.getText()+"', '"+
                     stAwal.getText()+"', '"+stTujuan.getText()+"', '"+tgl.getText()+"', '"+JK+
-                    "', '"+wkt+"', '"+tmptDuduk.getSelectedItem()+"', '"+Harga.getText()+"')";
+                    "', '"+wkt+"', '"+tmptDuduk.getSelectedItem()+"', '"+Harga.getSelectedItem()+"')";
             int status = KoneksiDB.execute(SQL);
             if(status == 1){
                 JOptionPane.showMessageDialog(this, "Data Berhasil Ditambahkan", "SUKSES",
@@ -554,7 +555,7 @@ public class tampilan extends javax.swing.JFrame {
     private javax.swing.JButton Cetak;
     private javax.swing.JButton Clear;
     private javax.swing.JButton Delete;
-    private javax.swing.JTextField Harga;
+    private javax.swing.JComboBox<String> Harga;
     private javax.swing.JButton Pesan;
     private javax.swing.JButton Refresh;
     private javax.swing.JRadioButton bisnis;
