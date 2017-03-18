@@ -483,19 +483,21 @@ public class tampilan extends javax.swing.JFrame {
     }//GEN-LAST:event_RefreshActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        int baris = tabelpesan.getSelectedRow();
-        if (baris != -1) {
-            String Nama = tabelpesan.getValueAt(baris, 0).toString();
-            String SQL = "DELETE FROM tb_pesan WHERE Nama='"+Nama+"'";
-            int status = KoneksiDB.execute(SQL);
-            if (status==1){
-                JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus", "Sukses", JOptionPane.INFORMATION_MESSAGE);
-            }else{
-                JOptionPane.showMessageDialog(this, "Data Gagal Dihapus", "GAGAL", JOptionPane.WARNING_MESSAGE);
-            }
-        }else {
-            JOptionPane.showMessageDialog(this, "Pilih Baris Data Terlebih Dahulu", "Error", JOptionPane.WARNING_MESSAGE);
-        }
+       int baris = tabelpesan.getSelectedRow();
+    if (baris != -1){
+    String id = tabelpesan.getValueAt(baris, 0).toString();
+    String SQL = "DELETE FROM tb_pesan WHERE id='"+id+"'";
+    int status = KoneksiDB.execute(SQL);
+    if (status==1) {
+        JOptionPane.showMessageDialog(this, "Data Berhasil dihapus", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+        
+    }else {
+        JOptionPane.showMessageDialog(this, "Data Gagal dihapus", "Gagal", JOptionPane.WARNING_MESSAGE);
+    }
+    }else {
+    JOptionPane.showMessageDialog(this, "Pilih Baris Data Terlebih dahulu","Error",JOptionPane.WARNING_MESSAGE);// TODO add your handling code here:
+                                          
+    }   
 
     }//GEN-LAST:event_DeleteActionPerformed
 
