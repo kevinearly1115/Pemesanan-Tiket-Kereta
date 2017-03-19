@@ -60,7 +60,6 @@ public class tampilan extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelpesan = new javax.swing.JTable();
         tmptDuduk = new javax.swing.JComboBox<>();
-        tgl = new javax.swing.JTextField();
         Refresh = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -73,16 +72,17 @@ public class tampilan extends javax.swing.JFrame {
         sore = new javax.swing.JRadioButton();
         malam = new javax.swing.JRadioButton();
         Harga = new javax.swing.JComboBox<>();
+        tgl = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setFont(new java.awt.Font("MV Boli", 1, 36)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Gill Sans MT", 0, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Aplikasi Pemesanan TIket Kereta Api");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
+        jLabel10.setText(" Pemesanan Tiket Kereta Api");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -138,6 +138,8 @@ public class tampilan extends javax.swing.JFrame {
             }
         });
 
+        tabelpesan.setBackground(new java.awt.Color(0, 0, 102));
+        tabelpesan.setForeground(new java.awt.Color(255, 255, 255));
         tabelpesan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
@@ -155,12 +157,6 @@ public class tampilan extends javax.swing.JFrame {
         tmptDuduk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tmptDudukActionPerformed(evt);
-            }
-        });
-
-        tgl.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tglActionPerformed(evt);
             }
         });
 
@@ -235,31 +231,33 @@ public class tampilan extends javax.swing.JFrame {
                     .addComponent(jLabel9))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Harga, 0, 206, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(stTujuan)
-                        .addComponent(stAwal)
-                        .addComponent(id)
-                        .addComponent(nama)
-                        .addComponent(tmptDuduk, 0, 206, Short.MAX_VALUE)
-                        .addComponent(tgl))
+                    .addComponent(tgl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(eksekutif)
-                            .addComponent(ekonomiac))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ekonomi)
-                            .addComponent(bisnis)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(pagi)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(siang)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(sore)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(malam)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(stTujuan)
+                            .addComponent(stAwal)
+                            .addComponent(id)
+                            .addComponent(nama)
+                            .addComponent(tmptDuduk, 0, 206, Short.MAX_VALUE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(eksekutif)
+                                    .addComponent(ekonomiac))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ekonomi)
+                                    .addComponent(bisnis)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(pagi)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(siang)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(sore)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(malam))
+                            .addComponent(Harga, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(145, 145, 145)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -268,7 +266,7 @@ public class tampilan extends javax.swing.JFrame {
                     .addComponent(Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Pesan, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(11, 11, 11))
             .addComponent(jScrollPane1)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -304,10 +302,11 @@ public class tampilan extends javax.swing.JFrame {
                             .addComponent(Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(tgl, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Cetak, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Cetak, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel5))
+                            .addComponent(tgl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
@@ -342,7 +341,7 @@ public class tampilan extends javax.swing.JFrame {
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -377,7 +376,7 @@ public class tampilan extends javax.swing.JFrame {
         id.setText("");
         stAwal.setText("");
         stTujuan.setText("");
-        tgl.setText("");
+        
        
         buttonGroup1.clearSelection();
         buttonGroup2.clearSelection();
@@ -388,8 +387,11 @@ public class tampilan extends javax.swing.JFrame {
 
     private void PesanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesanActionPerformed
     
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String Tanggal = dateFormat.format(tgl.getDate());
+        
          if ( nama.getText().equals("") || stAwal.getText().equals("") ||
-                stTujuan.getText().equals("") || tgl.getText().equals("")  ||
+                stTujuan.getText().equals("") || Tanggal.equals("")  ||
                  tmptDuduk.getSelectedItem().equals("") || Harga.getSelectedItem().equals("")){
             
             JOptionPane.showMessageDialog(this, "Harap Lengkapi Data", "Error",
@@ -424,7 +426,7 @@ public class tampilan extends javax.swing.JFrame {
           
              
             String SQL = "INSERT INTO tb_pesan VALUES (null, '"+nama.getText()+"', '"+
-                    stAwal.getText()+"', '"+stTujuan.getText()+"', '"+tgl.getText()+"', '"+JK+
+                    stAwal.getText()+"', '"+stTujuan.getText()+"', '"+Tanggal+"', '"+JK+
                     "', '"+wkt+"', '"+tmptDuduk.getSelectedItem()+"', '"+Harga.getSelectedItem()+"')";
             int status = KoneksiDB.execute(SQL);
             if(status == 1){
@@ -445,10 +447,6 @@ public class tampilan extends javax.swing.JFrame {
     private void tmptDudukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmptDudukActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tmptDudukActionPerformed
-
-    private void tglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tglActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tglActionPerformed
 
     private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
          selectData();}
@@ -588,11 +586,11 @@ public class tampilan extends javax.swing.JFrame {
     private javax.swing.JTextField stAwal;
     private javax.swing.JTextField stTujuan;
     private javax.swing.JTable tabelpesan;
-    private javax.swing.JTextField tgl;
+    private com.toedter.calendar.JDateChooser tgl;
     private javax.swing.JComboBox<String> tmptDuduk;
     // End of variables declaration//GEN-END:variables
 
-   
+ 
 
    
 }
